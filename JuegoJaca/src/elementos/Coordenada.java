@@ -1,6 +1,7 @@
 package elementos;
 
 import java.util.Objects;
+import java.util.Random;
 
 import logicaJuego.Constantes;
 
@@ -11,8 +12,9 @@ public class Coordenada {
 	
 	public Coordenada() {
 		super();
-		this.x = (int) (Math.random() * Constantes.TAMANNO);
-		this.y = (int) (Math.random() * Constantes.TAMANNO);
+		Random r = new Random();
+		this.x = r.nextInt(Constantes.TAMANNO);
+		this.y = r.nextInt(Constantes.TAMANNO);
 		
 	}
 
@@ -86,7 +88,7 @@ public class Coordenada {
 	public boolean goLeft() {
 		boolean result = false; 
 		
-		if (this.x - 1 <= 0) {
+		if (this.x - 1 >= 0) {
 			this.x -= 1;
 			result = true;
 		} 
@@ -96,7 +98,7 @@ public class Coordenada {
 	
 	public boolean goUp() {
 		boolean result = false; 
-		if(this.y -1 <= 0) {
+		if(this.y -1 >= 0) {
 			this.y -= 1;
 			result = true;
 		}
@@ -116,8 +118,7 @@ public class Coordenada {
 
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		Coordenada result = new Coordenada(this.getX(), this.getY());
-		return result;
+		return new Coordenada(this.getX(), this.getY());
 	}
 	
 	
