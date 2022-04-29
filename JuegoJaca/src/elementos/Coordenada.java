@@ -42,7 +42,7 @@ public class Coordenada {
 
 	private void setY(int y) {
 		
-		if(y < 0 || y <= Constantes.TAMANNO) {
+		if(y < 0 || y >= Constantes.TAMANNO) {
 			this.y = 0;
 		} else {
 			this.y = y;
@@ -73,7 +73,12 @@ public class Coordenada {
 	} 
 	
 	public boolean goRight() {
-		boolean result = false; 
+		boolean result = false;
+		
+		if (this.x + 1 < Constantes.TAMANNO) {
+			this.x += 1;
+			result = true;
+		} 
 		
 		return result;
 	}
@@ -81,11 +86,20 @@ public class Coordenada {
 	public boolean goLeft() {
 		boolean result = false; 
 		
+		if (this.x - 1 <= 0) {
+			this.x -= 1;
+			result = true;
+		} 
+		
 		return result;
 	}
 	
 	public boolean goUp() {
 		boolean result = false; 
+		if(this.y -1 <= 0) {
+			this.y -= 1;
+			result = true;
+		}
 		
 		return result;
 	}
@@ -93,16 +107,19 @@ public class Coordenada {
 	public boolean goDown() {
 		boolean result = false; 
 		
+		if(this.y +1 < Constantes.TAMANNO) {
+			this.y += 1;
+			result = true;
+		}
 		return result;
 	}
 
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
-		return super.clone();
+		Coordenada result = new Coordenada(this.getX(), this.getY());
+		return result;
 	}
 	
-	//a ver si va 
 	
 	
 }
