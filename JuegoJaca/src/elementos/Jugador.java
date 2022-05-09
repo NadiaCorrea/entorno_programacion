@@ -103,25 +103,79 @@ public class Jugador {
 		return player;
 	}
 
-	
-	/*0: EMPATE: Hay empate ninguno de los dos gana la lucha 
-	 * 1:GANA_USA_POCIMA: Gana el jugador y se utiliza pocima del enemigo para que no muera 
-	 * 2: GANA_DINERO: Gana el jugador y se lleva todo el dinero del enemigo 
-	 * 3: GANA_MUERE; Gana el jugador y el enemigo muere 
-	 * 4: PIERDE_USA_POCIMA: Gana el enemigo y se utiliza pocima del jugador para que no muera 
-	 * 5: PIERDE_DINERO: Gana el enemigo y se lleva todo el dinero del jugador 
-	 * 6: PIERDE_MUERE: Gana el enemigo y el jugador muere*/
-	
-	public int lucha(Jugador enemigo) {
-		int result= 0;
+	public int lucha(Jugador enemigo) throws JugadorException {
+		int result = 0;
 		int resultadoLucha = this.getFuerzaParaLuchar() - enemigo.getFuerzaParaLuchar();
-		
-		if(resultadoLucha == 0) {
-			result = Constantes.EMPATE;
-		}
-		
 
+		if (resultadoLucha == 0) {
+			result = Constantes.EMPATE;
+		} else if (resultadoLucha > 0) {
+			if (enemigo.getDinero() > 0) {
+				result = Constantes.GANA_DINERO;
+				this.setDinero(this.getDinero() + enemigo.getDinero());
+				enemigo.setDinero(0);
+			} else {
+				if (enemigo.getPociones() > 0) {
+					enemigo.setPociones(enemigo.getPociones() - 1);
+					result = Constantes.GANA_USA_POCIMA;
+				} else {
+					result = Constantes.GANA_MUERE;
+				}
+			}
+		} else {
+			if (this.getDinero() > 0) {
+				result = Constantes.PIERDE_DINERO;
+				enemigo.setDinero(enemigo.getDinero() + this.getDinero());
+				this.setDinero(0);
+			} else {
+				if (this.getPociones() > 0) {
+					this.setPociones(this.getPociones() - 1);
+					result = Constantes.PIERDE_USA_POCIMA;
+				} else {
+					result = Constantes.PIERDE_MUERE;
+				}
+			}
+		}
 		return result;
 	}
 
+	public int encuentraRoca() throws JugadorException {
+		int result;
+
+		if (this.getGemas() > 0) {
+			result = Constantes.ROMPE_ROCA_CON_GEMA;
+			this.setGemas(this.getGemas() - 1);
+		} else {
+			if (this.getMagia() > 4) {
+				result = Constantes.GANA_A_LA_ROCA;
+			} else {
+				result = Constantes.PIERDE_A_LA_ROCA;
+			}
+		}
+		return result;
+	}
+
+	public void encuentraDineo() {
+		try {
+			this.setDinero(this.getDinero() + 1);
+		} catch (JugadorException e) {
+			e.getMessage();
+		}
+	}
+
+	public void encuentraPocion() {
+		try {
+			this.setPociones(this.getPociones() + 1);
+		} catch (JugadorException e) {
+			e.getMessage();
+		}
+	}
+
+	public void encuentraGema() {
+		try {
+			this.setGemas(this.getGemas() + 1);
+		} catch (JugadorException e) {
+			e.getMessage();
+		}
+	}
 }
