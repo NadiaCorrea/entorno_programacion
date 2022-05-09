@@ -2,9 +2,13 @@ package logicaJuego;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 
-import elementos.*;
+import elementos.Coordenada;
+import elementos.Element;
+import elementos.ElementType;
+import elementos.Jugador;
+import elementos.JugadorException;
+import elementos.PlayerType;
 
 public class Juego {
 
@@ -13,6 +17,71 @@ public class Juego {
 	private int jugadorJuega;
 	private int dado; // Dado para ver los movimientos del jugador que juega
 
+	public Juego(PlayerType[] jugadores) {
+		super();
+
+	}
+
+	private void crearTablero() {
+		this.crearRocas();
+		this.crearGemas();
+		this.crearDinero();
+		this.crearPociones();
+	}
+
+	private boolean crearJugador(PlayerType tipo) {
+		boolean result = false;
+		Jugador jugador1 = new Jugador(tipo);
+		Coordenada coordenada1 = new Coordenada();
+		while (tablero.containsKey(coordenada1)) {
+			coordenada1 = new Coordenada();
+		}
+		result = coordenadaJugadores.add(coordenada1);
+		ta
+
+		return result;
+	}
+
+	private void crearRocas() {
+
+		for (int i = 0; i < Constantes.ROCA; i = i + 1) {
+			Coordenada coordenada1 = new Coordenada();
+			while (tablero.containsKey(coordenada1)) {
+				coordenada1 = new Coordenada();
+			}
+			tablero.put(coordenada1, new Element(ElementType.ROCA));
+		}
+	}
+
+	private void crearGemas() {
+		for (int i = 0; i < Constantes.GEMA; i = i + 1) {
+			Coordenada coordenada1 = new Coordenada();
+			while (tablero.containsKey(coordenada1)) {
+				coordenada1 = new Coordenada();
+			}
+			tablero.put(coordenada1, new Element(ElementType.GEMA));
+		}
+	}
+
+	private void crearPociones() {
+		for (int i = 0; i < Constantes.POCION; i = i + 1) {
+			Coordenada coordenada1 = new Coordenada();
+			while (tablero.containsKey(coordenada1)) {
+				coordenada1 = new Coordenada();
+			}
+			tablero.put(coordenada1, new Element(ElementType.POCION));
+		}
+	}
+
+	private void crearDinero() {
+		for (int i = 0; i < Constantes.DINERO; i = i + 1) {
+			Coordenada coordenada1 = new Coordenada();
+			while (tablero.containsKey(coordenada1)) {
+				coordenada1 = new Coordenada();
+			}
+			tablero.put(coordenada1, new Element(ElementType.DINERO));
+		}
+	}
 
 	/**
 	 * Escribe el tablero en formato no gráfico. Devuelve el string con la
@@ -44,7 +113,6 @@ public class Juego {
 		return resul.toString();
 	}
 
-
 	/**
 	 * Simplemente escribe una barra en pantalla
 	 * 
@@ -59,7 +127,6 @@ public class Juego {
 		resul.append("\n");
 		return resul.toString();
 	}
-
 
 	/**
 	 * Mover el jugador
@@ -155,5 +222,4 @@ public class Juego {
 		return resul;
 	}
 
-	
 }
