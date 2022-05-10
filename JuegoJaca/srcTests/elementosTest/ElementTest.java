@@ -14,7 +14,7 @@ class ElementTest {
 
 	// Test ID:1 - Constructor con parámetro
 	@Test
-	void ConstructorTest() {
+	void constructorTest() {
 		Element prueba = new Element(ElementType.OGRO);
 		ElementType actual = prueba.getType();
 
@@ -23,7 +23,7 @@ class ElementTest {
 
 	// Test ID:2 - Element a cadena de texto
 	@Test
-	void ElementToStringTest() {
+	void elementToStringTest() {
 		Element prueba = new Element(ElementType.ELFO);
 		String actual = prueba.toString();
 		String expected = "Element [type=" + prueba.getType() + "]";
@@ -42,7 +42,7 @@ class ElementTest {
 
 	// Test ID:4 - Element Equals mismo objeto
 	@Test
-	void EqualsMismoTest() {
+	void equalsMismoTest() {
 		Element prueba = new Element(ElementType.DINERO);
 
 		assertTrue("No son iguales", prueba.equals(prueba));
@@ -51,7 +51,7 @@ class ElementTest {
 	// Test ID:5 - Element Equals objeto nulo
 
 	@Test
-	void EqualsNullTest() {
+	void equalsNullTest() {
 		Element prueba = new Element(ElementType.GEMA);
 
 		assertFalse("Error en equalsNull", prueba.equals(null));
@@ -60,7 +60,7 @@ class ElementTest {
 	// Test ID:6 - Element Equals objeto de otra clase
 
 	@Test
-	void EqualsOtherClassTest() {
+	void equalsOtherClassTest() {
 		Element prueba = new Element(ElementType.POCION);
 		Coordenada coordenada1 = new Coordenada(1, 3);
 
@@ -70,7 +70,7 @@ class ElementTest {
 	// Test ID:7 - Element Equals objeto de la misma clase pero de distinto tipo
 
 	@Test
-	void EqualsSameClassTest() {
+	void equalsSameClassTest() {
 		Element prueba = new Element(ElementType.MAGO);
 		Element actual = new Element(ElementType.OGRO);
 
@@ -80,7 +80,7 @@ class ElementTest {
 	// Test ID:8 - Element Equals objeto de la misma clase y mismo tipo
 
 	@Test
-	void EqualsSameTypeTest() {
+	void equalsSameTypeTest() {
 		Element prueba = new Element(ElementType.GUERRERO);
 		Element actual = new Element(ElementType.GUERRERO);
 
