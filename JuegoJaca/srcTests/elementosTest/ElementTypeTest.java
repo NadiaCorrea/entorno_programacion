@@ -14,7 +14,7 @@ class ElementTypeTest {
 	void getTipotest() {
 		int actual = ElementType.OGRO.getType();
 
-		assertEquals("Los tipos no son iguales.", Constantes.OGRO, actual);
+		assertEquals("Los tipos no son iguales", Constantes.OGRO, actual);
 	}
 
 	// Test ID:2 - Obtener el símbolo del enumerado ElementType

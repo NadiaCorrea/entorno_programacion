@@ -224,4 +224,23 @@ class CoordenadaTest {
 		assertEquals("Disminuyó en valor", 9, original.getY());
 	}
 
+	// Test ID:22 - objeto clonado
+	@Test
+	void objetoClonadoTest() throws CloneNotSupportedException {
+		Coordenada original = new Coordenada(7, 8);
+		Coordenada clon = (Coordenada) original.clone();
+
+		assertEquals("La coordenada X del clon no es igual", original.getX(), clon.getX());
+		assertEquals("La coordenada Y del clon no es igual", original.getY(), clon.getY());
+	}
+
+	// Test ID:23 - hashCode
+	@Test
+	void hashCodeTest() {
+		Coordenada original = new Coordenada(3, 9);
+		Coordenada copia = new Coordenada(3, 9);
+
+		assertTrue("No tienen el mismo hashCode", original.hashCode() == copia.hashCode());
+	}
+
 }

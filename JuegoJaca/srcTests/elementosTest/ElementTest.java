@@ -86,4 +86,14 @@ class ElementTest {
 
 		assertTrue("Error en equalsSameType", prueba.equals(actual));
 	}
+
+	// Test ID:9 - Element HashCode
+
+	@Test
+	void hashCodeTest() {
+		Element original = new Element(ElementType.OGRO);
+		Element copia = new Element(ElementType.OGRO);
+
+		assertEquals("No tienen el mismo hashCode", original.hashCode(), copia.hashCode());
+	}
 }
