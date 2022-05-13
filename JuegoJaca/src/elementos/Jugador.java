@@ -4,7 +4,7 @@ import java.util.Random;
 
 import logicaJuego.Constantes;
 
-public class Jugador {
+public class Jugador extends Element {
 	private int dinero;
 	private int pociones;
 	private int gemas;
@@ -12,7 +12,7 @@ public class Jugador {
 	private Random r = new Random();
 
 	public Jugador(PlayerType player) {
-		super();
+		super(ElementType.valueOf(player.name()));
 		this.player = player;
 	}
 
@@ -96,7 +96,7 @@ public class Jugador {
 	}
 
 	public String resumen() {
-		return "Jugador [dinero=" + dinero + ", pociones=" + pociones + ", gemas=" + gemas + "]";
+		return "Jugador: " + this.getNombre() + " Dinero: " + dinero + " Pociones: " + pociones + " Gemas: " + gemas;
 	}
 
 	public PlayerType getPlayer() {
@@ -117,6 +117,7 @@ public class Jugador {
 			} else {
 				if (enemigo.getPociones() > 0) {
 					enemigo.setPociones(enemigo.getPociones() - 1);
+					this.setPociones(this.getPociones() + 1);
 					result = Constantes.GANA_USA_POCIMA;
 				} else {
 					result = Constantes.GANA_MUERE;
@@ -130,6 +131,7 @@ public class Jugador {
 			} else {
 				if (this.getPociones() > 0) {
 					this.setPociones(this.getPociones() - 1);
+					enemigo.setPociones(enemigo.getPociones() + 1);
 					result = Constantes.PIERDE_USA_POCIMA;
 				} else {
 					result = Constantes.PIERDE_MUERE;
@@ -155,7 +157,7 @@ public class Jugador {
 		return result;
 	}
 
-	public void encuentraDineo() {
+	public void encuentraDinero() {
 		try {
 			this.setDinero(this.getDinero() + 1);
 		} catch (JugadorException e) {
