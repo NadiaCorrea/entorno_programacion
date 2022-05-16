@@ -188,7 +188,7 @@ public class Juego {
 		this.coordenadaJugadores.remove(coordenada);
 	}
 
-	private Coordenada getNextPosition(char letra) {
+	private Coordenada getNextPosition(char letra) throws JuegoException {
 		Coordenada result = null;
 
 		Coordenada coordenada = obtenerCoordenadaJugadorJuega();
@@ -209,10 +209,10 @@ public class Juego {
 				result.goLeft();
 				break;
 			default:
-				break;
+				throw new JuegoException("No es una dirección válida");
 			}
 		} catch (CloneNotSupportedException e) {
-			System.out.println(e.getMessage());
+			throw new JuegoException(e.getMessage());
 		}
 
 		return result;

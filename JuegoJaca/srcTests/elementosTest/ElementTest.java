@@ -53,8 +53,9 @@ class ElementTest {
 	@Test
 	void equalsNullTest() {
 		Element prueba = new Element(ElementType.GEMA);
+		Element nulo = null;
 
-		assertFalse("Error en equalsNull", prueba.equals(null));
+		assertFalse("Error en equalsNull", prueba.equals(nulo));
 	}
 
 	// Test ID:6 - Element Equals objeto de otra clase

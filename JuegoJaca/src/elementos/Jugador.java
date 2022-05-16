@@ -120,8 +120,8 @@ public class Jugador extends Element {
 			} else {
 				if (enemigo.getPociones() > 0) {
 					enemigo.setPociones(enemigo.getPociones() - 1);
-					//el enemigo pierde pocima pero el jugador no la obtiene
-					//this.setPociones(this.getPociones() + 1); 
+					// el enemigo pierde pocima pero el jugador no la obtiene
+					// this.setPociones(this.getPociones() + 1);
 					result = Constantes.GANA_USA_POCIMA;
 				} else {
 					result = Constantes.GANA_MUERE;
@@ -135,8 +135,8 @@ public class Jugador extends Element {
 			} else {
 				if (this.getPociones() > 0) {
 					this.setPociones(this.getPociones() - 1);
-					//el jugador pierde pocima pero el enemigo no la obtiene
-					//enemigo.setPociones(enemigo.getPociones() + 1);
+					// el jugador pierde pocima pero el enemigo no la obtiene
+					// enemigo.setPociones(enemigo.getPociones() + 1);
 					result = Constantes.PIERDE_USA_POCIMA;
 				} else {
 					result = Constantes.PIERDE_MUERE;
@@ -153,7 +153,7 @@ public class Jugador extends Element {
 			result = Constantes.ROMPE_ROCA_CON_GEMA;
 			this.setGemas(this.getGemas() - 1);
 		} else {
-			if (this.getMagia() > 4) {
+			if (this.getMagiaParaLuchar() > 4) {
 				result = Constantes.GANA_A_LA_ROCA;
 			} else {
 				result = Constantes.PIERDE_A_LA_ROCA;
