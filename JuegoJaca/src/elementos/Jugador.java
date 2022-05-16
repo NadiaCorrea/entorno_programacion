@@ -14,6 +14,9 @@ public class Jugador extends Element {
 	public Jugador(PlayerType player) {
 		super(ElementType.valueOf(player.name()));
 		this.player = player;
+		this.dinero = 0;
+		this.pociones = 0;
+		this.gemas = 0;
 	}
 
 	public String getNombre() {
@@ -117,7 +120,8 @@ public class Jugador extends Element {
 			} else {
 				if (enemigo.getPociones() > 0) {
 					enemigo.setPociones(enemigo.getPociones() - 1);
-					this.setPociones(this.getPociones() + 1);
+					//el enemigo pierde pocima pero el jugador no la obtiene
+					//this.setPociones(this.getPociones() + 1); 
 					result = Constantes.GANA_USA_POCIMA;
 				} else {
 					result = Constantes.GANA_MUERE;
@@ -131,7 +135,8 @@ public class Jugador extends Element {
 			} else {
 				if (this.getPociones() > 0) {
 					this.setPociones(this.getPociones() - 1);
-					enemigo.setPociones(enemigo.getPociones() + 1);
+					//el jugador pierde pocima pero el enemigo no la obtiene
+					//enemigo.setPociones(enemigo.getPociones() + 1);
 					result = Constantes.PIERDE_USA_POCIMA;
 				} else {
 					result = Constantes.PIERDE_MUERE;
