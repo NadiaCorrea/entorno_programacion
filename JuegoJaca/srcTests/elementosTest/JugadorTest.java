@@ -13,6 +13,8 @@ import logicaJuego.Constantes;
 
 public class JugadorTest {
 
+	private static final String MENSAJE = "El resultado de la lucha no es válido";
+
 	// Test ID:1 - Constructor con parámetros
 	@Test
 	void constructorConParametrosTest() {
@@ -187,8 +189,8 @@ public class JugadorTest {
 
 		for (int i = 0; i < 100; i = i + 1) {
 			int result = jugador.lucha(enemigo);
-			assertTrue("El resultado de la lucha no es válido", (result == Constantes.EMPATE)
-					|| (result == Constantes.GANA_MUERE) || (result == Constantes.PIERDE_MUERE));
+			assertTrue(MENSAJE, (result == Constantes.EMPATE) || (result == Constantes.GANA_MUERE)
+					|| (result == Constantes.PIERDE_MUERE));
 		}
 	}
 
@@ -202,8 +204,8 @@ public class JugadorTest {
 
 		for (int i = 0; i < 100; i = i + 1) {
 			int result = jugador.lucha(enemigo);
-			assertTrue("El resultado de la lucha no es válido", (result == Constantes.EMPATE)
-					|| (result == Constantes.GANA_DINERO) || (result == Constantes.PIERDE_DINERO));
+			assertTrue(MENSAJE, (result == Constantes.EMPATE) || (result == Constantes.GANA_DINERO)
+					|| (result == Constantes.PIERDE_DINERO));
 			assertTrue("El dinero no es correcto",
 					(jugador.getDinero() == 1 && enemigo.getDinero() == 2)
 							|| (jugador.getDinero() == 3 && enemigo.getDinero() == 0)
@@ -224,8 +226,8 @@ public class JugadorTest {
 
 		for (int i = 0; i < 100; i = i + 1) {
 			int result = jugador.lucha(enemigo);
-			assertTrue("El resultado de la lucha no es válido", (result == Constantes.EMPATE)
-					|| (result == Constantes.GANA_USA_POCIMA) || (result == Constantes.PIERDE_USA_POCIMA));
+			assertTrue(MENSAJE, (result == Constantes.EMPATE) || (result == Constantes.GANA_USA_POCIMA)
+					|| (result == Constantes.PIERDE_USA_POCIMA));
 			assertTrue("Las pociones no son correctas",
 					(jugador.getPociones() == 3 && enemigo.getPociones() == 2)
 							|| (jugador.getPociones() == 3 && enemigo.getPociones() == 1)
