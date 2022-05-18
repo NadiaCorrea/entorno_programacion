@@ -1,4 +1,4 @@
-package logicaJuego;
+package logica.juego;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -267,7 +267,7 @@ public class Juego {
 					// tirando
 					break;
 				case Constantes.PIERDE_USA_POCIMA:
-					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita una pÃ³cima al jugador";
+					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita una pócima al jugador";
 					break;
 				case Constantes.PIERDE_DINERO:
 					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita el dinero al jugador";

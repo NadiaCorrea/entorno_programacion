@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import elementos.ElementType;
-import logicaJuego.Constantes;
+import logica.juego.Constantes;
 
 class ElementTypeTest {
 

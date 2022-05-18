@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import elementos.Jugador;
 import elementos.JugadorException;
 import elementos.PlayerType;
-import logicaJuego.Constantes;
+import logica.juego.Constantes;
 
 public class JugadorTest {
 

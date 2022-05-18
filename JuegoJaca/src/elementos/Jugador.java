@@ -2,7 +2,7 @@ package elementos;
 
 import java.util.Random;
 
-import logicaJuego.Constantes;
+import logica.juego.Constantes;
 
 public class Jugador extends Element {
 	private int dinero;
@@ -120,8 +120,6 @@ public class Jugador extends Element {
 			} else {
 				if (enemigo.getPociones() > 0) {
 					enemigo.setPociones(enemigo.getPociones() - 1);
-					// el enemigo pierde pocima pero el jugador no la obtiene
-					// this.setPociones(this.getPociones() + 1);
 					result = Constantes.GANA_USA_POCIMA;
 				} else {
 					result = Constantes.GANA_MUERE;
@@ -135,8 +133,6 @@ public class Jugador extends Element {
 			} else {
 				if (this.getPociones() > 0) {
 					this.setPociones(this.getPociones() - 1);
-					// el jugador pierde pocima pero el enemigo no la obtiene
-					// enemigo.setPociones(enemigo.getPociones() + 1);
 					result = Constantes.PIERDE_USA_POCIMA;
 				} else {
 					result = Constantes.PIERDE_MUERE;

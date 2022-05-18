@@ -1,4 +1,4 @@
-package logicaJuego;
+package logicaJuegoTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -13,6 +13,8 @@ import elementos.ElementType;
 import elementos.Jugador;
 import elementos.JugadorException;
 import elementos.PlayerType;
+import logica.juego.Constantes;
+import logica.juego.Juego;
 
 public class JuegoTest {
 
