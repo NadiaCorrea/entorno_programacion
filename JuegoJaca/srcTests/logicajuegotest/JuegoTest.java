@@ -1,4 +1,4 @@
-package logicaJuegoTest;
+package logicajuegotest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -13,12 +13,12 @@ import elementos.ElementType;
 import elementos.Jugador;
 import elementos.JugadorException;
 import elementos.PlayerType;
-import logica.juego.Constantes;
-import logica.juego.Juego;
+import logicajuego.Constantes;
+import logicajuego.Juego;
 
 public class JuegoTest {
 
-	// Test ID:1 - Constructor con parámetros
+	// Test ID:1 - Constructor con parï¿½metros
 	@Test
 	void constructorConParametrosTest() {
 		PlayerType[] jugadores = new PlayerType[4];
@@ -31,7 +31,7 @@ public class JuegoTest {
 		String result = juego.toString();
 
 		assertTrue("El juego no tiene contenido", result.length() > 0);
-		assertEquals("El próximo jugador no es correcto", PlayerType.OGRO.name(), juego.getNombreJuegadorQueJuega());
+		assertEquals("El prï¿½ximo jugador no es correcto", PlayerType.OGRO.name(), juego.getNombreJuegadorQueJuega());
 		assertEquals("El valor del dado no es correcto", 0, juego.getValorDado());
 	}
 
@@ -102,7 +102,7 @@ public class JuegoTest {
 
 		String result = juego.imprimeNombreJugadores();
 
-		assertTrue("El resultado de imprimir los nombres de los jugadores está vacío", result.length() > 0);
+		assertTrue("El resultado de imprimir los nombres de los jugadores estï¿½ vacï¿½o", result.length() > 0);
 	}
 
 	// Test ID:7 - Imprimir valores jugadores
@@ -117,10 +117,10 @@ public class JuegoTest {
 
 		String result = juego.imprimeValoreJugadores();
 
-		assertTrue("El resultado los valores de los jugadores está vacío", result.length() > 0);
+		assertTrue("El resultado los valores de los jugadores estï¿½ vacï¿½o", result.length() > 0);
 	}
 
-	// Test ID:8 - Establecer próximo jugador
+	// Test ID:8 - Establecer prï¿½ximo jugador
 	@Test
 	void establecerProximoJugadorTest() {
 		PlayerType[] jugadores = new PlayerType[4];
@@ -137,7 +137,7 @@ public class JuegoTest {
 		assertEquals("El nombre del jugador no es el esperado", PlayerType.GUERRERO.name(), jugador);
 	}
 
-	// Test ID:9 - Establecer próximo jugador al último
+	// Test ID:9 - Establecer prï¿½ximo jugador al ï¿½ltimo
 	@Test
 	void establecerProximoJugadorUltimoTest() {
 		PlayerType[] jugadores = new PlayerType[4];
@@ -169,7 +169,7 @@ public class JuegoTest {
 
 		String jugador = juego.getGanador();
 
-		assertEquals("El nombre del ganador no es vacío", 0, jugador.length());
+		assertEquals("El nombre del ganador no es vacï¿½o", 0, jugador.length());
 	}
 
 	// Test ID:11 - Obtener ganador por dinero
@@ -193,7 +193,7 @@ public class JuegoTest {
 		assertEquals("El nombre del ganador no es correcto", PlayerType.MAGO.name(), ganador);
 	}
 
-	// Test ID:12 - Obtener ganador por último jugador
+	// Test ID:12 - Obtener ganador por ï¿½ltimo jugador
 	@Test
 	void obtenerGanadorUltimoJugadorTest() {
 		PlayerType[] jugadores = new PlayerType[1];
@@ -341,4 +341,20 @@ public class JuegoTest {
 
 		assertNotNull("La coordenada del jugador es nula", coordenada);
 	}
+	
+	/*@Test
+	void movePlayerNoValidoTest() {
+		PlayerType[] jugadores = new PlayerType[4];
+		jugadores[0] = PlayerType.OGRO;
+		jugadores[1] = PlayerType.GUERRERO;
+		jugadores[2] = PlayerType.ELFO;
+		jugadores[3] = PlayerType.MAGO;
+		Juego juego = new Juego(jugadores);
+		
+		j
+		
+		
+	}*/
+	
+	
 }

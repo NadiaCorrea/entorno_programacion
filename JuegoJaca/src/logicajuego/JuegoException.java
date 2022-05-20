@@ -1,4 +1,4 @@
-package logica.juego;
+package logicajuego;
 
 public class JuegoException extends Exception {
 

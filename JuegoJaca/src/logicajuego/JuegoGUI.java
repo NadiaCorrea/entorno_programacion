@@ -1,4 +1,4 @@
-package logica.juego;
+package logicajuego;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

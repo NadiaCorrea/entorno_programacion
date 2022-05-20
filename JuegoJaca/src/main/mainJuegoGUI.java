@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import elementos.PlayerType;
-import logica.juego.Constantes;
-import logica.juego.JuegoException;
-import logica.juego.JuegoGUI;
+import logicajuego.Constantes;
+import logicajuego.JuegoException;
+import logicajuego.JuegoGUI;
 
 public class mainJuegoGUI {
 

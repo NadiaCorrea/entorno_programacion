@@ -1,11 +1,11 @@
-package elementosTest;
+package elementostest;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 import elementos.PlayerType;
-import logica.juego.Constantes;
+import logicajuego.Constantes;
 
 class PlayerTypeTest {
 

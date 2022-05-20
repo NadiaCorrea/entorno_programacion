@@ -1,4 +1,4 @@
-package elementosTest;
+package elementostest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -10,18 +10,18 @@ import elementos.Coordenada;
 
 class CoordenadaTest {
 
-	// Test ID:1 - Constructor sin parámetros
+	// Test ID:1 - Constructor sin parï¿½metros
 	@Test
 	void constructorNoParamTest() {
 		Coordenada prueba = new Coordenada();
 		int actualX = prueba.getX();
 		int actualY = prueba.getY();
 
-		assertTrue("Constructor sin parámetros", actualX >= 0 && actualX <= 9);
-		assertTrue("Constructor sin parámetros", actualY >= 0 && actualY <= 9);
+		assertTrue("Constructor sin parï¿½metros", actualX >= 0 && actualX <= 9);
+		assertTrue("Constructor sin parï¿½metros", actualY >= 0 && actualY <= 9);
 	}
 
-	// Test ID:2 - Constructor con parámetros válidos
+	// Test ID:2 - Constructor con parï¿½metros vï¿½lidos
 	@Test
 	void constructorConParamTest() {
 		Coordenada prueba = new Coordenada(1, 9);
@@ -32,7 +32,7 @@ class CoordenadaTest {
 		assertEquals("El valor esperado de Y no es igual al valor dado", 9, actualY);
 	}
 
-	// Test ID:3 - Constructor con parámetros no válidos
+	// Test ID:3 - Constructor con parï¿½metros no vï¿½lidos
 	@Test
 	void constructParamNoValidTest() {
 		Coordenada prueba = new Coordenada(-1, 10);
@@ -45,7 +45,7 @@ class CoordenadaTest {
 		assertEquals("El valor esperado de Y no es igual al valor dado", expectedY, actualY);
 	}
 
-	// Test ID:4 - Constructor con parámetro X no válido
+	// Test ID:4 - Constructor con parï¿½metro X no vï¿½lido
 	@Test
 	void constructorXNoValidTest() {
 		Coordenada prueba = new Coordenada(-1, 9);
@@ -58,7 +58,7 @@ class CoordenadaTest {
 		assertEquals("El valor esperado de Y no es igual al valor dado", expectedY, actualY);
 	}
 
-	// Test ID:5 - Constructor con parámetro Y no válido
+	// Test ID:5 - Constructor con parï¿½metro Y no vï¿½lido
 	@Test
 	void constructorYNoValidTest() {
 		Coordenada prueba = new Coordenada(3, 11);
@@ -151,7 +151,7 @@ class CoordenadaTest {
 		boolean actual = original.goRight();
 
 		assertTrue("goRigth es falso", actual);
-		assertEquals("No aumentó en valor", 4, original.getX());
+		assertEquals("No aumentï¿½ en valor", 4, original.getX());
 	}
 
 	// Test ID:15 - go right false
@@ -161,7 +161,7 @@ class CoordenadaTest {
 		boolean actual = original.goRight();
 
 		assertFalse("goRight es verdadero", actual);
-		assertEquals("Aumentó en valor", 9, original.getX());
+		assertEquals("Aumentï¿½ en valor", 9, original.getX());
 	}
 
 	// Test ID:16 - go left true
@@ -171,7 +171,7 @@ class CoordenadaTest {
 		boolean actual = original.goLeft();
 
 		assertTrue("goLeft es falso", actual);
-		assertEquals("No disminuyó en valor", 2, original.getX());
+		assertEquals("No disminuyï¿½ en valor", 2, original.getX());
 	}
 
 	// Test ID:17 - go left false
@@ -181,7 +181,7 @@ class CoordenadaTest {
 		boolean actual = original.goLeft();
 
 		assertFalse("goLeft es verdadero", actual);
-		assertEquals("Disminuyó en valor", 0, original.getX());
+		assertEquals("Disminuyï¿½ en valor", 0, original.getX());
 	}
 
 	// Test ID:18 - go up true
@@ -191,7 +191,7 @@ class CoordenadaTest {
 		boolean actual = original.goUp();
 
 		assertTrue("goUp es falso", actual);
-		assertEquals("No disminuyó en valor", 5, original.getY());
+		assertEquals("No disminuyï¿½ en valor", 5, original.getY());
 	}
 
 	// Test ID:19 - go up false
@@ -201,7 +201,7 @@ class CoordenadaTest {
 		boolean actual = original.goUp();
 
 		assertFalse("goUp es verdadero", actual);
-		assertEquals("Disminuyó en valor", 0, original.getY());
+		assertEquals("Disminuyï¿½ en valor", 0, original.getY());
 	}
 
 	// Test ID:20 - go down true
@@ -211,7 +211,7 @@ class CoordenadaTest {
 		boolean actual = original.goDown();
 
 		assertTrue("goDown es falso", actual);
-		assertEquals("No disminuyó en valor", 9, original.getY());
+		assertEquals("No disminuyï¿½ en valor", 9, original.getY());
 	}
 
 	// Test ID:21 - go down false
@@ -221,7 +221,7 @@ class CoordenadaTest {
 		boolean actual = original.goDown();
 
 		assertFalse("goDown es verdadero", actual);
-		assertEquals("Disminuyó en valor", 9, original.getY());
+		assertEquals("Disminuyï¿½ en valor", 9, original.getY());
 	}
 
 	// Test ID:22 - objeto clonado

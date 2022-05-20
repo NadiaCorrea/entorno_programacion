@@ -3,7 +3,7 @@ package elementos;
 import java.util.Objects;
 import java.util.Random;
 
-import logica.juego.Constantes;
+import logicajuego.Constantes;
 
 public class Coordenada {
 

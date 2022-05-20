@@ -1,4 +1,4 @@
-package elementosTest;
+package elementostest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -9,13 +9,13 @@ import org.junit.jupiter.api.Test;
 import elementos.Jugador;
 import elementos.JugadorException;
 import elementos.PlayerType;
-import logica.juego.Constantes;
+import logicajuego.Constantes;
 
 public class JugadorTest {
 
-	private static final String MENSAJE = "El resultado de la lucha no es válido";
+	private static final String MENSAJE = "El resultado de la lucha no es vï¿½lido";
 
-	// Test ID:1 - Constructor con parámetros
+	// Test ID:1 - Constructor con parï¿½metros
 	@Test
 	void constructorConParametrosTest() {
 		Jugador jugador = new Jugador(PlayerType.MAGO);
@@ -76,7 +76,7 @@ public class JugadorTest {
 		assertEquals("El dinero no es igual", 3, jugador.getDinero());
 	}
 
-	// Test ID:7 - Establecer dinero válido
+	// Test ID:7 - Establecer dinero vï¿½lido
 	@Test
 	void establecerDineroValidoTest() throws JugadorException {
 		Jugador jugador = new Jugador(PlayerType.OGRO);
@@ -86,7 +86,7 @@ public class JugadorTest {
 		assertEquals("El dinero no es igual", 2, jugador.getDinero());
 	}
 
-	// Test ID:8 - Establecer dinero no válido
+	// Test ID:8 - Establecer dinero no vï¿½lido
 	@Test
 	void establecerDineroNoValidoTest() {
 		Jugador jugador = new Jugador(PlayerType.ELFO);
@@ -108,7 +108,7 @@ public class JugadorTest {
 		assertEquals("Las pociones no son iguales", 1, jugador.getPociones());
 	}
 
-	// Test ID:10 - Establecer pociones válido
+	// Test ID:10 - Establecer pociones vï¿½lido
 	@Test
 	void establecerPocionesValidoTest() throws JugadorException {
 		Jugador jugador = new Jugador(PlayerType.ELFO);
@@ -118,7 +118,7 @@ public class JugadorTest {
 		assertEquals("Las pociones no son iguales", 4, jugador.getPociones());
 	}
 
-	// Test ID:11 - Establecer pociones no válido
+	// Test ID:11 - Establecer pociones no vï¿½lido
 	@Test
 	void establecerPocionesNoValidoTest() {
 		Jugador jugador = new Jugador(PlayerType.ELFO);
@@ -140,7 +140,7 @@ public class JugadorTest {
 		assertEquals("Las gemas no son iguales", 2, jugador.getGemas());
 	}
 
-	// Test ID:13 - Establecer gemas válido
+	// Test ID:13 - Establecer gemas vï¿½lido
 	@Test
 	void establecerGemasValidoTest() throws JugadorException {
 		Jugador jugador = new Jugador(PlayerType.OGRO);
@@ -150,7 +150,7 @@ public class JugadorTest {
 		assertEquals("Las gemas no son iguales", 1, jugador.getGemas());
 	}
 
-	// Test ID:14 - Establecer gemas no válido
+	// Test ID:14 - Establecer gemas no vï¿½lido
 	@Test
 	void establecerGemasNoValidoTest() {
 		Jugador jugador = new Jugador(PlayerType.GUERRERO);
@@ -216,7 +216,7 @@ public class JugadorTest {
 		}
 	}
 
-	// Test ID:19 - Lucha poción
+	// Test ID:19 - Lucha pociï¿½n
 	@Test
 	void luchaPocionTest() throws JugadorException {
 		Jugador jugador = new Jugador(PlayerType.OGRO);
@@ -271,7 +271,7 @@ public class JugadorTest {
 		assertEquals("El dinero es incorrecto", 1, jugador.getDinero());
 	}
 
-	// Test ID: 23 - Encontrar poción
+	// Test ID: 23 - Encontrar pociï¿½n
 	@Test
 	void encontrarPocionTest() throws JugadorException {
 		Jugador jugador = new Jugador(PlayerType.MAGO);

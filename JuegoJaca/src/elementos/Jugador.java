@@ -2,7 +2,7 @@ package elementos;
 
 import java.util.Random;
 
-import logica.juego.Constantes;
+import logicajuego.Constantes;
 
 public class Jugador extends Element {
 	private int dinero;

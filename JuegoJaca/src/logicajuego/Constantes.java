@@ -1,4 +1,4 @@
-package logica.juego;
+package logicajuego;
 
 public class Constantes {
 	public static final int TAMANNO = 10;

@@ -1,4 +1,4 @@
-package elementosTest;
+package elementostest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -12,7 +12,7 @@ import elementos.ElementType;
 
 class ElementTest {
 
-	// Test ID:1 - Constructor con parámetro
+	// Test ID:1 - Constructor con parï¿½metro
 	@Test
 	void constructorTest() {
 		Element prueba = new Element(ElementType.OGRO);

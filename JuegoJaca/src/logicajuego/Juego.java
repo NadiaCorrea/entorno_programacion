@@ -1,4 +1,4 @@
-package logica.juego;
+package logicajuego;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -209,7 +209,7 @@ public class Juego {
 				result.goLeft();
 				break;
 			default:
-				throw new JuegoException("No es una dirección válida");
+				throw new JuegoException("No es una direcciï¿½n vï¿½lida");
 			}
 		} catch (CloneNotSupportedException e) {
 			throw new JuegoException(e.getMessage());
@@ -267,7 +267,7 @@ public class Juego {
 					// tirando
 					break;
 				case Constantes.PIERDE_USA_POCIMA:
-					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita una pócima al jugador";
+					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita una pï¿½cima al jugador";
 					break;
 				case Constantes.PIERDE_DINERO:
 					resul = "El enemigo " + enemigo.getNombre() + " gana. Le quita el dinero al jugador";

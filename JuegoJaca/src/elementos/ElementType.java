@@ -4,7 +4,7 @@
  */
 package elementos;
 
-import logica.juego.Constantes;
+import logicajuego.Constantes;
 
 public enum ElementType {
 	

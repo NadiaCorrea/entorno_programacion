@@ -1,11 +1,11 @@
-package elementosTest;
+package elementostest;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 import elementos.ElementType;
-import logica.juego.Constantes;
+import logicajuego.Constantes;
 
 class ElementTypeTest {
 
@@ -17,12 +17,12 @@ class ElementTypeTest {
 		assertEquals("Los tipos no son iguales", Constantes.OGRO, actual);
 	}
 
-	// Test ID:2 - Obtener el símbolo del enumerado ElementType
+	// Test ID:2 - Obtener el sï¿½mbolo del enumerado ElementType
 	@Test
 	void getSymbolTest() {
 		char actual = ElementType.GEMA.getSymbol();
 
-		assertEquals("Los símbolos no son iguales", 'Y', actual);
+		assertEquals("Los sï¿½mbolos no son iguales", 'Y', actual);
 	}
 
 	// Test ID:3 - Obtener en formato cadena la imagen del enumerado ElementType

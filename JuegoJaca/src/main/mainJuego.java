@@ -6,10 +6,10 @@ import java.util.Scanner;
 import elementos.ElementType;
 import elementos.JugadorException;
 import elementos.PlayerType;
-import logica.juego.Constantes;
-import logica.juego.Juego;
-import logica.juego.JuegoException;
-import logica.juego.JuegoGUI;
+import logicajuego.Constantes;
+import logicajuego.Juego;
+import logicajuego.JuegoException;
+import logicajuego.JuegoGUI;
 
 public class mainJuego {
 
