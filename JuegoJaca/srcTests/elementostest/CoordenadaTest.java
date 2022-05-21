@@ -226,9 +226,9 @@ class CoordenadaTest {
 
 	// Test ID:22 - objeto clonado
 	@Test
-	void objetoClonadoTest() throws CloneNotSupportedException {
+	void objetoClonadoTest() {
 		Coordenada original = new Coordenada(7, 8);
-		Coordenada clon = (Coordenada) original.clone();
+		Coordenada clon = new Coordenada(original);
 
 		assertEquals("La coordenada X del clon no es igual", original.getX(), clon.getX());
 		assertEquals("La coordenada Y del clon no es igual", original.getY(), clon.getY());

@@ -192,27 +192,23 @@ public class Juego {
 		Coordenada result = null;
 
 		Coordenada coordenada = obtenerCoordenadaJugadorJuega();
-		try {
-			result = (Coordenada) coordenada.clone();
+		result = new Coordenada(coordenada);
 
-			switch (letra) {
-			case 'N':
-				result.goUp();
-				break;
-			case 'S':
-				result.goDown();
-				break;
-			case 'E':
-				result.goRight();
-				break;
-			case 'O':
-				result.goLeft();
-				break;
-			default:
-				throw new JuegoException("No es una direcci�n v�lida");
-			}
-		} catch (CloneNotSupportedException e) {
-			throw new JuegoException(e.getMessage());
+		switch (letra) {
+		case 'N':
+			result.goUp();
+			break;
+		case 'S':
+			result.goDown();
+			break;
+		case 'E':
+			result.goRight();
+			break;
+		case 'O':
+			result.goLeft();
+			break;
+		default:
+			throw new JuegoException("No es una direcci�n v�lida");
 		}
 
 		return result;
@@ -281,6 +277,8 @@ public class Juego {
 					// se le salta
 					this.jugadorJuega--;
 					break;
+				default:
+					break;
 				}
 				// Después de la lucha los jugadores no se mueven
 			} else if (elemento.getType() == ElementType.ROCA) {
@@ -298,6 +296,8 @@ public class Juego {
 
 				case Constantes.PIERDE_A_LA_ROCA:
 					resul = "El jugador " + jugador.getNombre() + " pierde. No se mueve";
+					break;
+				default:
 					break;
 				}
 			} else if (elemento.getType() == ElementType.GEMA) {

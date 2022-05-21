@@ -18,6 +18,13 @@ public class Coordenada {
 
 	}
 
+	// sustitución del clone()
+
+	public Coordenada(Coordenada coordenada) {
+		this.x = coordenada.getX();
+		this.y = coordenada.getY();
+	}
+
 	public Coordenada(int x, int y) {
 		super();
 		setX(x);
@@ -116,9 +123,6 @@ public class Coordenada {
 		return result;
 	}
 
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return new Coordenada(this.getX(), this.getY());
-	}
+	
 
 }

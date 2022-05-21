@@ -1,5 +1,6 @@
 package elementos;
 
+import java.util.Objects;
 import java.util.Random;
 
 import logicajuego.Constantes;
@@ -181,4 +182,25 @@ public class Jugador extends Element {
 			e.getMessage();
 		}
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(player);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Jugador other = (Jugador) obj;
+		return player == other.player;
+	}
+
 }

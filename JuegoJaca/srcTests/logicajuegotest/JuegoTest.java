@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +16,7 @@ import elementos.JugadorException;
 import elementos.PlayerType;
 import logicajuego.Constantes;
 import logicajuego.Juego;
+import logicajuego.JuegoException;
 
 public class JuegoTest {
 
@@ -341,20 +343,120 @@ public class JuegoTest {
 
 		assertNotNull("La coordenada del jugador es nula", coordenada);
 	}
-	
-	/*@Test
+
+	// Test ID:21 - Mover jugador a una dirección no válida
+	@Test
 	void movePlayerNoValidoTest() {
-		PlayerType[] jugadores = new PlayerType[4];
+		PlayerType[] jugadores = new PlayerType[1];
+		jugadores[0] = PlayerType.OGRO;
+
+		Juego juego = new Juego(jugadores);
+		try {
+			juego.movePlayer('d');
+			fail("No se se ha lanzado la excepción esperada.");
+		} catch (Exception e) {
+
+		}
+	}
+
+	/*
+	 * Test ID:22 - Mover jugador al norte: si después de moverlo el juego ha
+	 * terminado es que ha muerto, si la posición es la misma que la posición actual
+	 * es que no se ha movido y si cambia de posición debe disminuir la coordenada Y
+	 */
+	@Test
+	void movePlayerNorteTest() throws JuegoException, JugadorException {
+
+		PlayerType[] jugadores = new PlayerType[2];
 		jugadores[0] = PlayerType.OGRO;
 		jugadores[1] = PlayerType.GUERRERO;
-		jugadores[2] = PlayerType.ELFO;
-		jugadores[3] = PlayerType.MAGO;
+
 		Juego juego = new Juego(jugadores);
-		
-		j
-		
-		
-	}*/
-	
-	
+
+		Coordenada posicionActual = juego.obtenerCoordenadaJugadorJuega();
+		Coordenada posicionFinal = new Coordenada(posicionActual.getX(), posicionActual.getY() - 1);
+
+		juego.movePlayer('N');
+
+		assertTrue("Movimiento incorrecto.",
+				juego.isTerminado() || juego.obtenerCoordenadaJugadorJuega().equals(posicionActual)
+						|| juego.obtenerCoordenadaJugadorJuega().equals(posicionFinal));
+
+	}
+
+	/*
+	 * Test ID:23 - Mover jugador al sur: si después de moverlo el juego ha
+	 * terminado es que ha muerto, si la posición es la misma que la posición actual
+	 * es que no se ha movido y si cambia de posición debe aumentar la coordenada Y
+	 */
+	@Test
+	void movePlayerSurTest() throws JuegoException, JugadorException {
+
+		PlayerType[] jugadores = new PlayerType[2];
+		jugadores[0] = PlayerType.OGRO;
+		jugadores[1] = PlayerType.GUERRERO;
+
+		Juego juego = new Juego(jugadores);
+
+		Coordenada posicionActual = juego.obtenerCoordenadaJugadorJuega();
+		Coordenada posicionFinal = new Coordenada(posicionActual.getX(), posicionActual.getY() + 1);
+
+		juego.movePlayer('S');
+
+		assertTrue("Movimiento incorrecto.",
+				juego.isTerminado() || juego.obtenerCoordenadaJugadorJuega().equals(posicionActual)
+						|| juego.obtenerCoordenadaJugadorJuega().equals(posicionFinal));
+
+	}
+	/*
+	 * Test ID:24 - Mover jugador al este: si después de moverlo el juego ha
+	 * terminado es que ha muerto, si la posición es la misma que la posición actual
+	 * es que no se ha movido y si cambia de posición debe aumentar la coordenada X
+	 */
+
+	@Test
+	void movePlayerEsteTest() throws JuegoException, JugadorException {
+
+		PlayerType[] jugadores = new PlayerType[2];
+		jugadores[0] = PlayerType.OGRO;
+		jugadores[1] = PlayerType.GUERRERO;
+
+		Juego juego = new Juego(jugadores);
+
+		Coordenada posicionActual = juego.obtenerCoordenadaJugadorJuega();
+		Coordenada posicionFinal = new Coordenada(posicionActual.getX() + 1, posicionActual.getY());
+
+		juego.movePlayer('E');
+
+		assertTrue("Movimiento incorrecto.",
+				juego.isTerminado() || juego.obtenerCoordenadaJugadorJuega().equals(posicionActual)
+						|| juego.obtenerCoordenadaJugadorJuega().equals(posicionFinal));
+
+	}
+
+	/*
+	 * Test ID:25 - Mover jugador al oeste: si después de moverlo el juego ha
+	 * terminado es que ha muerto, si la posición es la misma que la posición actual
+	 * es que no se ha movido y si cambia de posición debe disminuir la coordenada X
+	 */
+	@Test
+	void movePlayerOesteTest() throws JuegoException, JugadorException {
+
+		PlayerType[] jugadores = new PlayerType[2];
+		jugadores[0] = PlayerType.OGRO;
+		jugadores[1] = PlayerType.GUERRERO;
+
+		Juego juego = new Juego(jugadores);
+
+		Coordenada posicionActual = juego.obtenerCoordenadaJugadorJuega();
+		Coordenada posicionFinal = new Coordenada(posicionActual.getX() - 1, posicionActual.getY());
+
+		juego.movePlayer('O');
+
+		assertTrue("Movimiento incorrecto.",
+				juego.isTerminado() || juego.obtenerCoordenadaJugadorJuega().equals(posicionActual)
+						|| juego.obtenerCoordenadaJugadorJuega().equals(posicionFinal));
+
+	}
+
 }

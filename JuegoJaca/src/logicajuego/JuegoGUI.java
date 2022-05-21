@@ -82,11 +82,12 @@ public class JuegoGUI extends Juego implements ActionListener {
 		ventana.pack();
 		ventana.setVisible(true);
 
-		// Muestra ventana con el jugador que le toca jugar y el número que le ha salido
+		// Muestra ventana con el jugador que le toca jugar y el número que le ha
+		// salido
 		// en el dado.
 
-		JOptionPane.showMessageDialog(ventana,
-				"Le toca al jugador " + super.getNombreJuegadorQueJuega() + ". El dado saca " + super.getValorDado() + " movimientos");
+		JOptionPane.showMessageDialog(ventana, "Le toca al jugador " + super.getNombreJuegadorQueJuega()
+				+ ". El dado saca " + super.getValorDado() + " movimientos");
 	}
 
 	// Devuelve el icono correspondiente según el elemento
@@ -134,7 +135,8 @@ public class JuegoGUI extends Juego implements ActionListener {
 		button.setIcon(imageIcon);
 	}
 
-	/** Muestra información
+	/**
+	 * Muestra información
 	 * 
 	 */
 	public void setInformacion() {
@@ -143,8 +145,8 @@ public class JuegoGUI extends Juego implements ActionListener {
 				+ super.imprimeNombreJugadores().replaceAll("\n", "<br><br>") + "</html>");
 	}
 
-	
-	/** Controla el juego
+	/**
+	 * Controla el juego
 	 * 
 	 */
 	@Override
@@ -165,14 +167,14 @@ public class JuegoGUI extends Juego implements ActionListener {
 							try {
 								resul = super.movePlayer('S');
 							} catch (JuegoException | JugadorException e1) {
-								// TODO Auto-generated catch block
+
 								e1.printStackTrace();
 							}
 						} else if (j - coord.getY() == -1) {
 							try {
 								resul = super.movePlayer('N');
 							} catch (JuegoException | JugadorException e1) {
-								// TODO Auto-generated catch block
+
 								e1.printStackTrace();
 							}
 						} else {
@@ -183,14 +185,14 @@ public class JuegoGUI extends Juego implements ActionListener {
 							try {
 								resul = super.movePlayer('E');
 							} catch (JuegoException | JugadorException e1) {
-								// TODO Auto-generated catch block
+
 								e1.printStackTrace();
 							}
 						} else if (i - coord.getX() == -1) {
 							try {
 								resul = super.movePlayer('O');
 							} catch (JuegoException | JugadorException e1) {
-								// TODO Auto-generated catch block
+
 								e1.printStackTrace();
 							}
 						} else {

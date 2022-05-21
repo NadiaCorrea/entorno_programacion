@@ -2,6 +2,11 @@ package elementos;
 
 public class JugadorException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5546385404890743557L;
+
 	public JugadorException() {
 		// TODO Auto-generated constructor stub
 	}
