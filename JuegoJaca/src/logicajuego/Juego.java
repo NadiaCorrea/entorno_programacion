@@ -241,7 +241,7 @@ public class Juego {
 		// Tengo que ver que hay en la nueva casilla
 		Element elemento = this.tablero.get(coordDestino);
 
-		if (elemento != null) { // Hay algo en la casilla
+		if (elemento != null && !coordDestino.equals(this.coordenadaJugadores.get(jugadorJuega))) { // Hay algo en la casilla
 			if (elemento instanceof Jugador) {
 
 				Jugador enemigo = (Jugador) elemento;
